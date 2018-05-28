@@ -5,11 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Canvas.css">
     <title>Document</title>
+
 </head>
 
 <body>
-    Hello
+    <canvas id="canvas-real" class="canvas" width='1000px' height='500px'></canvas>
+    <canvas id="canvas-draft" class="canvas" width='1000px' height='500px'></canvas>
+
+
+
+    <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type='text/javascript' src="canvas-common.js"></script>
+    <script type='text/javascript' src="drawing-lline.js"></script>
+    <script type='text/javascript' src="drawing-rectangle.js"></script>
+    <script type='text/javascript'>
+        currentFunction = new DrawingRectangle(contextReal, contextDraft);
+    </script>
+
 </body>
 
 </html>
