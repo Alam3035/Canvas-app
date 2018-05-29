@@ -10,3 +10,15 @@
 #canvas-draft {
     background-color: transparent;
 }
+
+body {
+    overflow: hidden;
+}
+
+#canvas-container {
+    height: 500px;
+}
+
+.buttons {
+    z-index: 1;
+}
