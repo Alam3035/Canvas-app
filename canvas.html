@@ -16,7 +16,8 @@
     </div>
     <div class="buttons">
         <span class="btn btn-primary fa fa-square" id="drawing-rectangle">Rectangle</span>
-        <span class="btn btn-primary far fa-circle" id="drawing-circle">Circle</span>
+        <span class="btn btn-primary" id="drawing-circle">Circle</span>
+        <span class="btn btn-primary" id="drawing-freeform">Freeform</span>
         <span class="btn btn-info fa fa-paint-brush" id="drawing-line">Line</span>
         <span class="btn btn-info" id="drawing-straight-line">Straight Line</span>
         <span class="btn btn-info" id="erasing">Eraser</span>
@@ -28,6 +29,7 @@
     <script type='text/javascript' src="Javascript/drawing-line.js"></script>
     <script type='text/javascript' src="Javascript/drawing-rectangle.js"></script>
     <script type="text/javascript" src="Javascript/drawing-circle.js"></script>
+    <script type="text/javascript" src="Javascript/drawing-freeform.js"></script>
     <script type="text/javascript" src="Javascript/drawing-straigth-line.js"></script>
     <script type="text/javascript" src="Javascript/Write-text.js"></script>
     <script type="text/javascript" src="Javascript/eraser.js"></script>
@@ -38,6 +40,9 @@
         });
         $('#drawing-circle').click(() => {
             currentFunction = new DrawingCircle(contextReal, contextDraft);
+        });
+        $('#drawing-freeform').click(() => {
+            currentFunction = new DrawingFreeForm(contextReal, contextDraft);
         });
         $('#drawing-line').click(() => {
             currentFunction = new DrawingLine(contextReal, contextDraft);

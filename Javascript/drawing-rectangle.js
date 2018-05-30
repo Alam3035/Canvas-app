@@ -24,5 +24,3 @@ class DrawingRectangle extends PaintFunction {
     onMouseLeave() {}
     onMouseEnter() {}
 }
-
-var color = document.getElementById('hex').value;;
