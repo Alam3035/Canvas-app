@@ -8,14 +8,14 @@ class DrawingFreeForm extends PaintFunction {
     }
 
     onMouseDown(coord, event) {
-        this.contextReal.strokeStyle = "#ff0000"; //canvas-configuration.js
-        this.contextDraft.strokeStyle = "#ff0000"; //canvas-configuration.js
-        this.contextReal.lineCap = "round"; //line cap shape
-        this.contextDraft.lineCap = "round"; //line cap shape
+        this.contextReal.strokeStyle = "#ff0000";
+        this.contextDraft.strokeStyle = "#ff0000";
+        this.contextReal.lineCap = "round";
+        this.contextDraft.lineCap = "round";
         this.contextReal.lineJoin = "round";
-        this.contextReal.lineWidth = 3; //canvas-configuration.js
-        this.contextDraft.lineWidth = 3; //canvas-configuration.js
-        this.contextReal.fillStyle = "#ff0000"; //canvas-configuration.js
+        this.contextReal.lineWidth = 3;
+        this.contextDraft.lineWidth = 3;
+        this.contextReal.fillStyle = "#ff0000";
 
         //action for the First click
         if (this.actionCount === 0) {
@@ -24,7 +24,6 @@ class DrawingFreeForm extends PaintFunction {
             this.contextReal.beginPath();
             this.contextReal.moveTo(this.firstOrigX, this.firstOrigY);
             this.pointsArr.push({ "x": this.firstOrigX, "y": this.firstOrigY });
-            //console.log('pointsArr at 0-MouseDown '+JSON.stringify(this.pointsArr));
         }
         dragging = true;
     }
@@ -36,7 +35,6 @@ class DrawingFreeForm extends PaintFunction {
             this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
             this.toDrawReal(this.newX, this.newY, coord[0], coord[1]);
             this.pointsArr.push({ "x": coord[0], "y": coord[1] });
-            //console.log('pointsArr at 0-MouseUp '+JSON.stringify(this.pointsArr));
             this.actionCount = 1;
         } else if (this.actionCount === 1) {
             if (Math.pow((this.firstOrigX - coord[0]), 2) < 400 && Math.pow((this.firstOrigY - coord[1]), 2) < 400) {
@@ -44,10 +42,8 @@ class DrawingFreeForm extends PaintFunction {
                 this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
                 this.contextReal.lineTo(this.firstOrigX, this.firstOrigY);
                 this.pointsArr.push({ "x": this.firstOrigX, "y": this.firstOrigY });
-                //console.log('pointsArr at 1-MouseUp '+JSON.stringify(this.pointsArr));
                 this.contextReal.stroke();
                 this.polygonFillTest();
-                //console.log('Points array '+JSON.stringify(this.pointsArr));
                 this.pointsArr = [];
                 this.onFinish(); //Stores undo state
                 this.actionCount = 0;
@@ -58,10 +54,8 @@ class DrawingFreeForm extends PaintFunction {
                 this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
                 this.toDrawReal(this.newX, this.newY, coord[0], coord[1]);
                 this.pointsArr.push({ "x": coord[0], "y": coord[1] });
-                //console.log('pointsArr at 0-MouseUp '+JSON.stringify(this.pointsArr));
             }
         }
-        //console.log('mouse up '+ coord[0],coord[1]);
     }
     onDragging(coord, event) {
         if (this.actionCount === 0) {
@@ -73,10 +67,8 @@ class DrawingFreeForm extends PaintFunction {
     polygonFillTest() {
         this.contextReal.beginPath();
         this.contextReal.moveTo(this.pointsArr[0].x, this.pointsArr[0].y);
-        //console.log('Fill move to '+ this.pointsArr[0].x+' , '+this.pointsArr[0].y)
         for (var i = 1; i < this.pointsArr.length; i++) {
             this.contextReal.lineTo(this.pointsArr[i].x, this.pointsArr[i].y);
-            //console.log('Fill line to '+this.pointsArr[i].x+' , '+this.pointsArr[i].y)
         }
         this.contextReal.fill();
         this.contextReal.stroke();
@@ -92,11 +84,9 @@ class DrawingFreeForm extends PaintFunction {
 
     toDrawReal(fromX, fromY, toX, toY) {
         this.contextReal.lineTo(fromX, fromY);
-        //this.pointsArr.push(fromX,fromY);
         this.contextReal.stroke();
         this.contextReal.closePath();
         this.contextReal.beginPath();
         this.contextReal.moveTo(toX, toY);
-        //this.pointsArr.push(toX,toY);
     }
 }

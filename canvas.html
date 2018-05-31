@@ -12,17 +12,21 @@
     <div id="canvas-container">
         <canvas id="canvas-real" class="canvas" width='900px' height='500px'></canvas>
         <canvas id="canvas-draft" class="canvas" width='900px' height='500px'></canvas>
-
     </div>
+
     <div class="buttons">
         <span class="btn btn-primary fa fa-square" id="drawing-rectangle">Rectangle</span>
-        <span class="btn btn-primary" id="drawing-circle">Circle</span>
-        <span class="btn btn-primary" id="drawing-freeform">Freeform</span>
-        <span class="btn btn-info fa fa-paint-brush" id="drawing-line">Line</span>
-        <span class="btn btn-info" id="drawing-straight-line">Straight Line</span>
-        <span class="btn btn-info" id="erasing">Eraser</span>
-
+        <span class="btn btn-primary fa fa-circle" id="drawing-circle">Circle</span>
+        <span class="btn btn-primary fa fa-share-alt" id="drawing-freeform">Freeform</span>
+        <span class="btn btn-primary fa fa-paint-brush" id="drawing-line">Line</span>
+        <span class="btn btn-primary fa fa-minus" id="drawing-straight-line">Straight Line</span>
+        <span class="btn btn-primary fa fa-magnet" id="drawing-quad">Quad Line</span>
+        <span class="btn btn-primary fa fa-eraser" id="erasing">Eraser</span>
+        <span class="btn btn-primary fa fa-trash" id="ClearAll">Clear All</span>
+        <a href="#" class="btn btn-primary fa fa-save button_download" id="btn-download" download="my-file-name.png">Download</a>
     </div>
+
+
     <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type='text/javascript' src="Javascript/canvas-common.js"></script>
@@ -31,8 +35,11 @@
     <script type="text/javascript" src="Javascript/drawing-circle.js"></script>
     <script type="text/javascript" src="Javascript/drawing-freeform.js"></script>
     <script type="text/javascript" src="Javascript/drawing-straigth-line.js"></script>
+    <script type="text/javascript" src="Javascript//drawing-quad.js"></script>
     <script type="text/javascript" src="Javascript/Write-text.js"></script>
     <script type="text/javascript" src="Javascript/eraser.js"></script>
+    <script type="text/javascript" src="Javascript/drawing-clear.js"></script>
+    <script type="text/javascript" src="Javascript/saving.js"></script>
 
     <script type='text/javascript'>
         $('#drawing-rectangle').click(() => {
@@ -53,6 +60,10 @@
         $('#erasing').click(() => {
             currentFunction = new Eraser(contextReal, contextDraft);
         });
+        $('#drawing-quad').click(() => {
+            currentFunction = new DrawingQuad(contextReal, contextDraft);
+        });
+        currentFunction = new DrawingLine(contextReal, contextDraft);
     </script>
 </body>
 
