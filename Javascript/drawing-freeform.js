@@ -8,14 +8,15 @@ class DrawingFreeForm extends PaintFunction {
     }
 
     onMouseDown(coord, event) {
-        this.contextReal.strokeStyle = "#ff0000";
-        this.contextDraft.strokeStyle = "#ff0000";
-        this.contextReal.lineCap = "round";
-        this.contextDraft.lineCap = "round";
+
+        this.contextReal.strokeStyle = document.getElementById('colorpickerstroke').value; //canvas-configuration.js
+        this.contextDraft.strokeStyle = document.getElementById('colorpickerstroke').value; //canvas-configuration.js
+        this.contextReal.lineCap = "round"; //line cap shape
+        this.contextDraft.lineCap = "round"; //line cap shape
         this.contextReal.lineJoin = "round";
-        this.contextReal.lineWidth = 3;
-        this.contextDraft.lineWidth = 3;
-        this.contextReal.fillStyle = "#ff0000";
+        this.contextReal.lineWidth = document.getElementById('size').valueAsNumber ; //canvas-configuration.js
+        this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber ; //canvas-configuration.js
+        this.contextReal.fillStyle = document.getElementById('colorpickerfill').value; //canvas-configuration.js
 
         //action for the First click
         if (this.actionCount === 0) {

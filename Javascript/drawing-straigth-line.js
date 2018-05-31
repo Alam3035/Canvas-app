@@ -6,12 +6,12 @@ class DrawingStraigthLine extends PaintFunction {
     }
 
     onMouseDown(coord, event) {
-        this.contextReal.strokeStyle = "#df4b26"
-        this.contextDraft.strokeStyle = "#df4b26"
+        this.contextReal.strokeStyle = document.getElementById('colorpickerstroke').value
+        this.contextDraft.strokeStyle = document.getElementById('colorpickerstroke').value
         this.contextReal.lineCap = "round";
         this.contextDraft.lineCap = "round";
-        this.contextReal.lineWidth = 3;
-        this.contextDraft.lineWidth = 3;
+        this.contextReal.lineWidth = document.getElementById('size').valueAsNumber ;
+        this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber ;
         this.origX = coord[0];
         this.origY = coord[1];
         this.contextReal.beginPath();
