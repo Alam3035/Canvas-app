@@ -20,5 +20,9 @@ body {
 }
 
 .buttons {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
     z-index: 1;
+    padding:20px 20px;
 }

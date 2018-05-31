@@ -6,12 +6,14 @@ class DrawingLine extends PaintFunction {
     }
 
     onMouseDown(coord, event) {
-        this.context.strokeStyle = "#df4b26";
+        this.context.strokeStyle = document.getElementById('colorpickerstroke').value;
         this.context.lineJoin = "round";
-        this.context.lineWidth = 2;
+        this.context.lineCap = "round";
+        this.context.lineWidth = document.getElementById('size').valueAsNumber;
         this.context.beginPath();
         this.context.moveTo(coord[0], coord[1]);
         this.draw(coord[0], coord[1]);
+        
     }
     onDragging(coord, event) {
         this.draw(coord[0], coord[1]);
@@ -29,3 +31,12 @@ class DrawingLine extends PaintFunction {
         this.context.stroke();
     }
 }
+
+/*
+$("#blur").click(function (event) {
+    onMouseDown.push()
+    this.context.shadowBlur = 10;
+    this.context.shadowColor = 'rgb(0, 0, 0)';
+    
+});
+*/

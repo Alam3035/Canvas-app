@@ -5,12 +5,12 @@ class DrawingCircle extends PaintFunction {
         this.contextDraft = contextDraft;
     }
     onMouseDown(coord, event) {
-        this.contextReal.strokeStyle = "#f44";
-        this.contextReal.fillStyle = "#f44";
-        this.contextDraft.strokeStyle = "#f44";
-        this.contextDraft.fillStyle = "#f44";
-        this.contextReal.lineWidth = 5;
-        this.contextDraft.lineWidth = 5;
+        this.contextReal.strokeStyle = document.getElementById('colorpickerstroke').value;
+        this.contextReal.fillStyle = document.getElementById('colorpickerfill').value;
+        this.contextDraft.strokeStyle = document.getElementById('colorpickerstroke').value;
+        this.contextDraft.fillStyle = document.getElementById('colorpickerfill').value;
+        this.contextReal.lineWidth = document.getElementById('size').valueAsNumber ;
+        this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber ;
         this.contextReal.beginPath();
         this.origX = coord[0];
         this.origY = coord[1];
