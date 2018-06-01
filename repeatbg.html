@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <script src="repeatbg.js"></script>
+    </head>
+
+    <body>
+        <img src="images/batman.jpg" id="batman" width="0" height="0">
+
+        <select>
+            <option value="batman">Batman</option>
+            <option value="captain">Captain</option>
+            <option value="blackpanther">Black Panther</option>
+            <option value="thor">Thor</option>
+        </select>
+
+        <button onclick="draw('repeat')">Repeat</button>
+        <button onclick="draw('repeat-x')">Repeat-x</button>
+        <button onclick="draw('repeat-y')">Repeat-y</button>
+        <button onclick="draw('no-repeat')">No-repeat</button>
+
+        <canvas id="myCanvas" width="1500" height="1000" style="border:1px solid black;"></canvas>
+    </body>
+
+</html>
