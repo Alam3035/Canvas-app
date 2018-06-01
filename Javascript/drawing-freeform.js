@@ -9,14 +9,14 @@ class DrawingFreeForm extends PaintFunction {
 
     onMouseDown(coord, event) {
 
-        this.contextReal.strokeStyle = document.getElementById('colorpickerstroke').value; //canvas-configuration.js
-        this.contextDraft.strokeStyle = document.getElementById('colorpickerstroke').value; //canvas-configuration.js
+        this.contextReal.strokeStyle = document.getElementById('colorpickerstroke').value;
+        this.contextDraft.strokeStyle = document.getElementById('colorpickerstroke').value;
         this.contextReal.lineCap = "round"; //line cap shape
         this.contextDraft.lineCap = "round"; //line cap shape
         this.contextReal.lineJoin = "round";
-        this.contextReal.lineWidth = document.getElementById('size').valueAsNumber ; //canvas-configuration.js
-        this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber ; //canvas-configuration.js
-        this.contextReal.fillStyle = document.getElementById('colorpickerfill').value; //canvas-configuration.js
+        this.contextReal.lineWidth = document.getElementById('size').valueAsNumber;
+        this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber;
+        this.contextReal.fillStyle = document.getElementById('colorpickerfill').value;
 
         //action for the First click
         if (this.actionCount === 0) {
@@ -46,7 +46,6 @@ class DrawingFreeForm extends PaintFunction {
                 this.contextReal.stroke();
                 this.polygonFillTest();
                 this.pointsArr = [];
-                this.onFinish(); //Stores undo state
                 this.actionCount = 0;
             } else {
                 this.newX = coord[0];

@@ -10,8 +10,8 @@ class DrawingStraigthLine extends PaintFunction {
         this.contextDraft.strokeStyle = document.getElementById('colorpickerstroke').value
         this.contextReal.lineCap = "round";
         this.contextDraft.lineCap = "round";
-        this.contextReal.lineWidth = document.getElementById('size').valueAsNumber ;
-        this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber ;
+        this.contextReal.lineWidth = document.getElementById('size').valueAsNumber;
+        this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber;
         this.origX = coord[0];
         this.origY = coord[1];
         this.contextReal.beginPath();
@@ -30,6 +30,5 @@ class DrawingStraigthLine extends PaintFunction {
         this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
         this.contextReal.lineTo(coord[0], coord[1]);
         this.contextReal.stroke();
-        this.onFinish();
     }
 }

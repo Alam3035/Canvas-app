@@ -13,7 +13,7 @@ class DrawingLine extends PaintFunction {
         this.context.beginPath();
         this.context.moveTo(coord[0], coord[1]);
         this.draw(coord[0], coord[1]);
-        
+
     }
     onDragging(coord, event) {
         this.draw(coord[0], coord[1]);
@@ -30,13 +30,10 @@ class DrawingLine extends PaintFunction {
         this.context.closePath();
         this.context.stroke();
     }
-}
 
-/*
-$("#blur").click(function (event) {
-    onMouseDown.push()
-    this.context.shadowBlur = 10;
-    this.context.shadowColor = 'rgb(0, 0, 0)';
-    
-});
-*/
+    onFinish() {
+        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount] = new Image();
+        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount].src = canvasReal.toDataURL();
+        canvasSettings.undoObject.actionCount++;
+    }
+}

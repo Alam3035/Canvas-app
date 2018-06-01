@@ -9,8 +9,8 @@ class DrawingCircle extends PaintFunction {
         this.contextReal.fillStyle = document.getElementById('colorpickerfill').value;
         this.contextDraft.strokeStyle = document.getElementById('colorpickerstroke').value;
         this.contextDraft.fillStyle = document.getElementById('colorpickerfill').value;
-        this.contextReal.lineWidth = document.getElementById('size').valueAsNumber ;
-        this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber ;
+        this.contextReal.lineWidth = document.getElementById('size').valueAsNumber;
+        this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber;
         this.contextReal.beginPath();
         this.origX = coord[0];
         this.origY = coord[1];

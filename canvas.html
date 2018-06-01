@@ -18,23 +18,21 @@
     <div class="buttons">
         <span class="btn btn-primary fa fa-square" id="drawing-rectangle">Rectangle</span>
         <span class="btn btn-primary fa fa-circle" id="drawing-circle">Circle</span>
-
         <span class="btn btn-primary fa fa-share-alt" id="drawing-freeform">Freeform</span>
         <span class="btn btn-primary fa fa-paint-brush" id="drawing-line">Line</span>
         <span class="btn btn-primary fa fa-minus" id="drawing-straight-line">Straight Line</span>
         <span class="btn btn-primary fa fa-magnet" id="drawing-quad">Quad Line</span>
         <span class="btn btn-primary fa fa-eraser" id="erasing">Eraser</span>
         <span class="btn btn-primary fa fa-trash" id="ClearAll">Clear All</span>
+        <span class="btn btn-primary" id="undo">Undo</span>
+        <span class="btn btn-primary" id="redo">Redo</span>
         <a href="#" class="btn btn-primary fa fa-save button_download" id="btn-download" download="my-file-name.png">Download</a>
     </div>
 
 
-
-    </div>
-
-    <div>fill<input type="color" id="colorpickerfill">
-        stroke<input type="color" id="colorpickerstroke">
-         size<input id="size" type="range"></div>
+    <div>fill<input type="color" id="colorpickerfill"> stroke
+        <input type="color" id="colorpickerstroke"> size
+        <input id="size" type="range"></div>
 
     <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -49,7 +47,6 @@
     <script type="text/javascript" src="Javascript/eraser.js"></script>
     <script type="text/javascript" src="Javascript/drawing-clear.js"></script>
     <script type="text/javascript" src="Javascript/saving.js"></script>
-
     <script type='text/javascript'>
         $('#drawing-rectangle').click(() => {
             currentFunction = new DrawingRectangle(contextReal, contextDraft);

@@ -12,8 +12,8 @@ class DrawingQuad extends PaintFunction {
             this.contextDraft.lineCap = "round"; //lineCap = "butt" or "round"
             this.contextReal.strokeStyle = document.getElementById('colorpickerstroke').value; //canvas-configuration.js
             this.contextDraft.strokeStyle = document.getElementById('colorpickerstroke').value; //canvas-configuration.js
-            this.contextReal.lineWidth = document.getElementById('size').valueAsNumber ; //canvas-configuration.js
-            this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber ; //canvas-configuration.js
+            this.contextReal.lineWidth = document.getElementById('size').valueAsNumber; //canvas-configuration.js
+            this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber; //canvas-configuration.js
             this.origX = coord[0];
             this.origY = coord[1];
             this.contextReal.beginPath();
@@ -46,7 +46,6 @@ class DrawingQuad extends PaintFunction {
             this.contextReal.quadraticCurveTo(coord[0], coord[1], this.endX, this.endY);
             this.contextReal.stroke();
             this.actionCounter = 0;
-            this.onFinish();
         }
     }
 }
