@@ -10,10 +10,10 @@ class DrawingQuad extends PaintFunction {
         if (this.actionCounter === 0) {
             this.contextReal.lineCap = "round"; //lineCap = "butt" or "round"
             this.contextDraft.lineCap = "round"; //lineCap = "butt" or "round"
-            this.contextReal.strokeStyle = "#df4b26";
-            this.contextDraft.strokeStyle = "#df4b26";
-            this.contextReal.lineWidth = 3;
-            this.contextDraft.lineWidth = 3;
+            this.contextReal.strokeStyle = document.getElementById('colorpickerstroke').value; //canvas-configuration.js
+            this.contextDraft.strokeStyle = document.getElementById('colorpickerstroke').value; //canvas-configuration.js
+            this.contextReal.lineWidth = document.getElementById('size').valueAsNumber; //canvas-configuration.js
+            this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber; //canvas-configuration.js
             this.origX = coord[0];
             this.origY = coord[1];
             this.contextReal.beginPath();

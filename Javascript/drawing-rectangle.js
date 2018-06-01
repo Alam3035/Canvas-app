@@ -6,12 +6,12 @@ class DrawingRectangle extends PaintFunction {
     }
 
     onMouseDown(coord, event) {
-        this.contextReal.fillStyle = document.getElementById('colorpickerfill').value;
+        this.contextReal.fillStyle = document.getElementById('colorpickerfill').value, 0.4;
         this.origX = coord[0];
         this.origY = coord[1];
     }
     onDragging(coord, event) {
-        this.contextDraft.fillStyle = document.getElementById('colorpickerfill').value;
+        this.contextDraft.fillStyle = rgba(document.getElementById('colorpickerfill').value, 0.4);
         this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
         this.contextDraft.fillRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY)
     }
