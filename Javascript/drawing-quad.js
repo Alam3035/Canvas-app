@@ -10,10 +10,10 @@ class DrawingQuad extends PaintFunction {
         if (this.actionCounter === 0) {
             this.contextReal.lineCap = "round"; //lineCap = "butt" or "round"
             this.contextDraft.lineCap = "round"; //lineCap = "butt" or "round"
-            this.contextReal.strokeStyle = "#df4b26"; //canvas-configuration.js
-            this.contextDraft.strokeStyle = "#df4b26"; //canvas-configuration.js
-            this.contextReal.lineWidth = 3; //canvas-configuration.js
-            this.contextDraft.lineWidth = 3; //canvas-configuration.js
+            this.contextReal.strokeStyle = "#df4b26";
+            this.contextDraft.strokeStyle = "#df4b26";
+            this.contextReal.lineWidth = 3;
+            this.contextDraft.lineWidth = 3;
             this.origX = coord[0];
             this.origY = coord[1];
             this.contextReal.beginPath();
@@ -46,7 +46,6 @@ class DrawingQuad extends PaintFunction {
             this.contextReal.quadraticCurveTo(coord[0], coord[1], this.endX, this.endY);
             this.contextReal.stroke();
             this.actionCounter = 0;
-            this.onFinish();
         }
     }
 }
