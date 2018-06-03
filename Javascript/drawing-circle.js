@@ -32,4 +32,9 @@ class DrawingCircle extends PaintFunction {
     }
     onMouseLeave() {}
     onMouseEnter() {}
+    onFinish() {
+        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount] = new Image();
+        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount].src = canvasReal.toDataURL();
+        canvasSettings.undoObject.actionCount++;
+    }
 }

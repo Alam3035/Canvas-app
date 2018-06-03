@@ -6,12 +6,16 @@ class DrawingRectangle extends PaintFunction {
     }
 
     onMouseDown(coord, event) {
-        this.contextReal.fillStyle = document.getElementById('colorpickerfill').value, 0.4;
+        this.contextReal.strokeStyle = document.getElementById('colorpickerstroke').value;
+        this.contextReal.fillStyle = document.getElementById('colorpickerfill').value;
+        this.contextReal.lineWidth = document.getElementById('size').valueAsNumber;
         this.origX = coord[0];
         this.origY = coord[1];
     }
     onDragging(coord, event) {
-        this.contextDraft.fillStyle = rgba(document.getElementById('colorpickerfill').value, 0.4);
+        this.contextDraft.strokeStyle = document.getElementById('colorpickerstroke').value;
+        this.contextDraft.fillStyle = document.getElementById('colorpickerfill').value;
+        this.contextDraft.lineWidth = document.getElementById('size').valueAsNumber;
         this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
         this.contextDraft.fillRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY)
     }
@@ -19,8 +23,14 @@ class DrawingRectangle extends PaintFunction {
     onMouseMove() {}
     onMouseUp(coord) {
         this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-        this.contextReal.fillRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY)
+        this.contextReal.fillRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY);
+        this.onFinish();
     }
     onMouseLeave() {}
     onMouseEnter() {}
+    onFinish() {
+        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount] = new Image();
+        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount].src = canvasReal.toDataURL();
+        canvasSettings.undoObject.actionCount++;
+    }
 }

@@ -46,6 +46,7 @@ class DrawingFreeForm extends PaintFunction {
                 this.contextReal.stroke();
                 this.polygonFillTest();
                 this.pointsArr = [];
+                this.onFinish();
                 this.actionCount = 0;
             } else {
                 this.newX = coord[0];
@@ -88,5 +89,10 @@ class DrawingFreeForm extends PaintFunction {
         this.contextReal.closePath();
         this.contextReal.beginPath();
         this.contextReal.moveTo(toX, toY);
+    }
+    onFinish() {
+        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount] = new Image();
+        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount].src = canvasReal.toDataURL();
+        canvasSettings.undoObject.actionCount++;
     }
 }
