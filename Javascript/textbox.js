@@ -29,44 +29,6 @@ $('#c').mousedown(function (e) {
     }
 });
 
-//buttons
-
-function fontstrokestyle() {
-
-    var fillOrStroke = "fill";
-
-    formElement = document.getElementById("fillOrStroke");
-    formElement.addEventListener("change", fillOrStrokeChanged, false);
-
-    drawScreen();
-
-    function drawScreen() {
-
-        switch (fillOrStroke) {
-            case "stroke":
-                return "#FF0000";
-
-                break;
-            case "fill":
-                return;
-
-                break;
-            case "both":
-                return "#FF0000";
-
-                break;
-        }
-
-    }
-
-    function fillOrStrokeChanged(e) {
-        var target = e.target;
-        fillOrStroke = target.value;
-        drawScreen();
-    }
-
-};
-
 
 function saveTextFromArea(y, x) {
     //get the value of the textarea then destroy it and the save button
