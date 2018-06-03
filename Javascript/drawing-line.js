@@ -20,7 +20,10 @@ class DrawingLine extends PaintFunction {
     }
 
     onMouseMove() {}
-    onMouseUp() {}
+    onMouseUp() {
+        this.onFinish();
+    }
+
     onMouseLeave() {}
     onMouseEnter() {}
 
