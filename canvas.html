@@ -37,6 +37,7 @@
     <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type='text/javascript' src="Javascript/canvas-common.js"></script>
+    <script type='text/javascript' src="Javascript/Undo-configuration.js"></script>
     <script type='text/javascript' src="Javascript/drawing-line.js"></script>
     <script type='text/javascript' src="Javascript/drawing-rectangle.js"></script>
     <script type="text/javascript" src="Javascript/drawing-circle.js"></script>
@@ -47,6 +48,8 @@
     <script type="text/javascript" src="Javascript/eraser.js"></script>
     <script type="text/javascript" src="Javascript/drawing-clear.js"></script>
     <script type="text/javascript" src="Javascript/saving.js"></script>
+    <script type="text/javascript" src="Javascript/undo.js"></script>
+
     <script type='text/javascript'>
         $('#drawing-rectangle').click(() => {
             currentFunction = new DrawingRectangle(contextReal, contextDraft);
@@ -70,6 +73,11 @@
             currentFunction = new DrawingQuad(contextReal, contextDraft);
         });
         currentFunction = new DrawingLine(contextReal, contextDraft);
+
+        //Initialize blank canvas as undoObject's first state
+        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount] = new Image();
+        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount].src = canvasReal.toDataURL();
+        canvasSettings.undoObject.actionCount++;
     </script>
 </body>
 
