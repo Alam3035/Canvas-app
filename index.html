@@ -15,11 +15,11 @@
 
 
     <div id="canvas-container" class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-9 col-ml-9">
             <canvas id="canvas-real" class="canvas" width='1125px' height='625px'></canvas>
             <canvas id="canvas-draft" class="canvas" width='1125px' height='625px'></canvas>
         </div>
-        <div id="rightDiv" class="col-lg-3">
+        <div id="rightDiv" class="col-lg-3 col-ml-3">
             <p>Fill</p>
             <input type="color" id="colorpickerfill">
             <p>Stroke</p>
@@ -54,20 +54,18 @@
 
     <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type='text/javascript' src="Javascript/canvas-common.js"></script>
-    <script type='text/javascript' src="Javascript/drawing-line.js"></script>
-    <script type='text/javascript' src="Javascript/drawing-rectangle.js"></script>
-    <script type="text/javascript" src="Javascript/drawing-circle.js"></script>
-    <script type="text/javascript" src="Javascript/drawing-freeform.js"></script>
-    <script type="text/javascript" src="Javascript/drawing-straigth-line.js"></script>
-    <script type="text/javascript" src="Javascript//drawing-quad.js"></script>
-    <script type="text/javascript" src="Javascript/eraser.js"></script>
-    <script type="text/javascript" src="Javascript/drawing-clear.js"></script>
-    <script type="text/javascript" src="Javascript/saving.js"></script>
-    <script type="text/javascript" src="Javascript/undo.js"></script>
-    <script type="text/javascript" src="Javascript/text.js"></script>
-    <script type="text/javascript" src="Javascript/textbox.js"></script>
-    <script type="text/javascript" src="Javascript/imagebg.js"></script>
+    <script type='text/javascript' src="javascript/canvas-common.js"></script>
+    <script type='text/javascript' src="javascript/drawing-line.js"></script>
+    <script type='text/javascript' src="javascript/drawing-rectangle.js"></script>
+    <script type="text/javascript" src="javascript/drawing-circle.js"></script>
+    <script type="text/javascript" src="javascript/drawing-freeform.js"></script>
+    <script type="text/javascript" src="javascript/drawing-straigth-line.js"></script>
+    <script type="text/javascript" src="javascript//drawing-quad.js"></script>
+    <script type="text/javascript" src="javascript/eraser.js"></script>
+    <script type="text/javascript" src="javascript/drawing-clear.js"></script>
+    <script type="text/javascript" src="javascript/saving.js"></script>
+    <script type="text/javascript" src="javascript/undo.js"></script>
+    
     <script type='text/javascript'>
         $('#drawing-rectangle').click(() => {
             currentFunction = new DrawingRectangle(contextReal, contextDraft);
@@ -94,9 +92,9 @@
 
         //Initialize blank canvas as undoObject's first state
 
-        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount] = new Image();
-        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount].src = canvasReal.toDataURL();
-        canvasSettings.undoObject.actionCount++;
+        undoObject.states[undoObject.actionCount] = new Image();
+        undoObject.states[undoObject.actionCount].src = canvasReal.toDataURL();
+        undoObject.actionCount++;
     </script>
 
 </body>
