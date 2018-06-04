@@ -9,18 +9,22 @@
 </head>
 
 <body>
-    
+
     <div id="canvas-container" class="row">
         <div class="col-lg-9">
-        <canvas id="canvas-real" class="canvas" width='1125px' height='600px'></canvas>
-        <canvas id="canvas-draft" class="canvas" width='1125px' height='600px'></canvas>
+            <canvas id="canvas-real" class="canvas" width='975px' height='500px'></canvas>
+            <canvas id="canvas-draft" class="canvas" width='975px' height='500px'></canvas>
         </div>
-        <div id="rightdiv" class="col-lg-3"><p>Fill</p>
-            <input type="color" id="colorpickerfill"> <p>Stroke</p>
-            <input type="color" id="colorpickerstroke"> <p>Size</p>
+        <div id="rightdiv" class="col-lg-3">
+            <p>Fill</p>
+            <input type="color" id="colorpickerfill">
+            <p>Stroke</p>
+            <input type="color" id="colorpickerstroke">
+            <p>Size</p>
             <input id="size" type="range">
             <div></div>
-        </div></div>
+        </div>
+    </div>
     </div>
 
     <div class="buttons">
@@ -32,18 +36,17 @@
         <button class="btn btn-circle btn-default fa fa-magnet" id="drawing-quad"><span>Curve</span></button>
         <button class="btn btn-circle btn-warning fa fa-eraser" id="erasing"><span>Eraser</span></button>
         <button class="btn btn-circle btn-danger fa fa-trash" id="ClearAll"><span>Delete</span></button>
-        <button class="btn btn-circle btn-default fa fa-undo" id="undo"><span>Undo</span></button>
-        <button class="btn btn-circle btn-default fa fa-redo" id="redo">Redo</button>
-        <button a href="#" class="btn btn btn-circle btn-default fa fa-save button_download" id="btn-download" download="my-file-name.png"></a></button>
+        <button class="btn btn-default fa fa-undo" id="undo"></button>
+        <button class="btn btn-default fa fa-redo-alt" id="redo"></button>
+        <a href="#" class="btn btn btn-circle btn-default fa fa-save button_download" id="btn-download" download="my-file-name.png"></a>
     </div>
 
 
-  
+
 
     <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type='text/javascript' src="Javascript/canvas-common.js"></script>
-    <script type='text/javascript' src="Javascript/Undo-configuration.js"></script>
     <script type='text/javascript' src="Javascript/drawing-line.js"></script>
     <script type='text/javascript' src="Javascript/drawing-rectangle.js"></script>
     <script type="text/javascript" src="Javascript/drawing-circle.js"></script>

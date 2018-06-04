@@ -33,8 +33,8 @@ class DrawingStraigthLine extends PaintFunction {
         this.onFinish();
     }
     onFinish() {
-        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount] = new Image();
-        canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount].src = canvasReal.toDataURL();
-        canvasSettings.undoObject.actionCount++;
+        undoObject.states[undoObject.actionCount] = new Image();
+        undoObject.states[undoObject.actionCount].src = canvasReal.toDataURL();
+        undoObject.actionCount++;
     }
 }
