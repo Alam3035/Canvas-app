@@ -4,42 +4,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="canvas.css" rel="stylesheet" type='text/css'>
+
 </head>
 
 <body>
 
+
+
     <div id="canvas-container" class="row">
         <div class="col-lg-9">
-            <canvas id="canvas-real" class="canvas" width='975px' height='500px'></canvas>
-            <canvas id="canvas-draft" class="canvas" width='975px' height='500px'></canvas>
+            <canvas id="canvas-real" class="canvas" width='1125px' height='625px'></canvas>
+            <canvas id="canvas-draft" class="canvas" width='1125px' height='625px'></canvas>
         </div>
-        <div id="rightdiv" class="col-lg-3">
+        <div id="rightDiv" class="col-lg-3">
             <p>Fill</p>
             <input type="color" id="colorpickerfill">
             <p>Stroke</p>
             <input type="color" id="colorpickerstroke">
             <p>Size</p>
             <input id="size" type="range">
-            <div></div>
+            <img src="kids.png">
+            <img src="kids2.png">
+
+
         </div>
-    </div>
     </div>
 
     <div class="buttons">
-        <button class="btn btn-circle btn-default fa fa-square" id="drawing-rectangle"><span>Rectangle</span></button>
-        <button class="btn btn-circle btn-default fa fa-circle" id="drawing-circle"><span>Circle</span></button>
-        <button class="btn btn-circle btn-default fa fa-share-alt" id="drawing-freeform"><span>Freeform</span></button>
-        <button class="btn btn-circle btn-default fa fa-paint-brush" id="drawing-line"><span>Freeline</span></button>
-        <button class="btn btn-circle btn-default fa fa-minus" id="drawing-straight-line"><span>Straight line</span></button>
-        <button class="btn btn-circle btn-default fa fa-magnet" id="drawing-quad"><span>Curve</span></button>
-        <button class="btn btn-circle btn-warning fa fa-eraser" id="erasing"><span>Eraser</span></button>
-        <button class="btn btn-circle btn-danger fa fa-trash" id="ClearAll"><span>Delete</span></button>
-        <button class="btn btn-default fa fa-undo" id="undo"></button>
-        <button class="btn btn-default fa fa-redo-alt" id="redo"></button>
-        <a href="#" class="btn btn btn-circle btn-default fa fa-save button_download" id="btn-download" download="my-file-name.png"></a>
+        <button class="btn btn-circle btn-default fa fa-square" id="drawing-rectangle">
+            <span>Rectangle</span>
+        </button>
+        <button class="btn btn-circle btn-default fa fa-circle" id="drawing-circle">
+            <span>Circle</span>
+        </button>
+        <button class="btn btn-circle btn-default fa fa-share-alt" id="drawing-freeform">
+            <span>Freeform</span>
+        </button>
+        <button class="btn btn-circle btn-default fa fa-paint-brush" id="drawing-line">
+            <span>Freeline</span>
+        </button>
+        <button class="btn btn-circle btn-default fa fa-minus" id="drawing-straight-line">
+            <span>Straight line</span>
+        </button>
+        <button class="btn btn-circle btn-default fa fa-magnet" id="drawing-quad">
+            <span>Curve</span>
+        </button>
+
+        <button class="btn btn-circle btn-warning fa fa-eraser" id="erasing">
+        <span>Eraser</span>
+        </button>
+        <button class="btn btn-circle btn-danger fa fa-trash" id="ClearAll">
+            <span>Delete</span>
+        </button>
+        <button class="btn btn-circle btn-default fa fa-undo" id="undo">
+            <span>Undo</span>
+        </button>
+        <button class="btn btn-circle btn-default fa fa-undo" id="redo">
+            <span></span>
+        </button>
+        <a href="#" class="btn btn btn-circle btn-default fa fa-save " id="btn-download" download="my-file-name.png"></a>
+
     </div>
+    <audio controls autoplay>
+        <source src="happytreesong.mp3" type="audio/mp3">
+    </audio>
+
+
 
 
 
@@ -57,7 +90,9 @@
     <script type="text/javascript" src="Javascript/drawing-clear.js"></script>
     <script type="text/javascript" src="Javascript/saving.js"></script>
     <script type="text/javascript" src="Javascript/undo.js"></script>
-
+    <script type="text/javascript" src="Javascript/text.js"></script>
+    <script type="text/javascript" src="Javascript/textbox.js"></script>
+    <script type="text/javascript" src="Javascript/imagebg.js"></script>
     <script type='text/javascript'>
         $('#drawing-rectangle').click(() => {
             currentFunction = new DrawingRectangle(contextReal, contextDraft);
@@ -82,11 +117,17 @@
         });
         currentFunction = new DrawingLine(contextReal, contextDraft);
 
+
+
         //Initialize blank canvas as undoObject's first state
+
+
+
         canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount] = new Image();
         canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount].src = canvasReal.toDataURL();
         canvasSettings.undoObject.actionCount++;
     </script>
+
 </body>
 
 </html>
