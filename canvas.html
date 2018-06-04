@@ -34,48 +34,23 @@
     </div>
 
     <div class="buttons">
-        <button class="btn btn-circle btn-default fa fa-square" id="drawing-rectangle">
-            <span>Rectangle</span>
-        </button>
-        <button class="btn btn-circle btn-default fa fa-circle" id="drawing-circle">
-            <span>Circle</span>
-        </button>
-        <button class="btn btn-circle btn-default fa fa-share-alt" id="drawing-freeform">
-            <span>Freeform</span>
-        </button>
-        <button class="btn btn-circle btn-default fa fa-paint-brush" id="drawing-line">
-            <span>Freeline</span>
-        </button>
-        <button class="btn btn-circle btn-default fa fa-minus" id="drawing-straight-line">
-            <span>Straight line</span>
-        </button>
-        <button class="btn btn-circle btn-default fa fa-magnet" id="drawing-quad">
-            <span>Curve</span>
-        </button>
-
-        <button class="btn btn-circle btn-warning fa fa-eraser" id="erasing">
-        <span>Eraser</span>
-        </button>
-        <button class="btn btn-circle btn-danger fa fa-trash" id="ClearAll">
-            <span>Delete</span>
-        </button>
-        <button class="btn btn-circle btn-default fa fa-undo" id="undo">
-            <span>Undo</span>
-        </button>
-        <button class="btn btn-circle btn-default fa fa-undo" id="redo">
-            <span></span>
-        </button>
-        <a href="#" class="btn btn btn-circle btn-default fa fa-save " id="btn-download" download="my-file-name.png"></a>
+        <button class="btn btn-circle btn-default fa fa-square" id="drawing-rectangle" title="Rectangle" /button>
+        <button class="btn btn-circle btn-default fa fa-circle" id="drawing-circle" title="Circle"></button>
+        <button class="btn btn-circle btn-default fa fa-share-alt" id="drawing-freeform" title="Freeform"></button>
+        <button class="btn btn-circle btn-default fa fa-paint-brush" id="drawing-line" title="Freeline"></button>
+        <button class="btn btn-circle btn-default fa fa-minus" id="drawing-straight-line" title="Straight line"></button>
+        <button class="btn btn-circle btn-default fa fa-magnet" id="drawing-quad" title="Curve"></button>
+        <button class="btn btn-circle btn-warning fa fa-eraser" id="erasing" title="Eraser"></button>
+        <button class="btn btn-circle btn-danger fa fa-trash" id="ClearAll" title="Delete"></button>
+        <button class="btn btn-circle btn-default fa fa-undo" id="undo" title="Undo"></button>
+        <button class="btn btn-circle btn-default fa fa-undo" id="redo" title="Redo"></button>
+        <a href="#" class="btn btn btn-circle btn-default fa fa-save " id="btn-download" download="my-file-name.png" title="Download"></a>
 
     </div>
+
     <audio controls autoplay>
         <source src="happytreesong.mp3" type="audio/mp3">
     </audio>
-
-
-
-
-
 
     <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -117,11 +92,7 @@
         });
         currentFunction = new DrawingLine(contextReal, contextDraft);
 
-
-
         //Initialize blank canvas as undoObject's first state
-
-
 
         canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount] = new Image();
         canvasSettings.undoObject.states[canvasSettings.undoObject.actionCount].src = canvasReal.toDataURL();
