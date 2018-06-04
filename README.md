@@ -24,9 +24,12 @@ The purpose of this Canvas Application was to allow us to implement the knowledg
 -   HTML, CSS, Bootstrap, Javascript, Jquery
 
 ## Bugs
-- The undo and redo button are not properly working at the moment. They are able to undo and redo the first element that was drawn.
+- The undo and redo button are not properly working at the moment. They are some instances where they able to undo and redo the first element that was drawn.
+- The audio at the load of the website plays only sometimes which needs to be fixed.
+- 
 
 ## Future Update
 -   Adding text
 -   Changeing background color
 -   More brush style
+-   Collaborative session with other users
